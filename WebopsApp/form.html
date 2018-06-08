@@ -1,0 +1,111 @@
+
+
+<div ng-controller="mainCtrl" class="parallax" style=" background-color: #e3eaf4; background-image: https://www.eventbooking.com/wp-content/uploads/2015/07/web-ops-logo-rgb.png" >
+
+
+<br><br><br>
+
+
+<div class="card" style="width:50vw;margin-left: 25vw;  opacity: 0.95; padding:2em;">
+  <h1 style="margin-bottom:25px; text-align: center; ">LOGIN FORM</h1>
+
+<form name="myform">
+
+  <div class="form-group">
+    <label for="name1"><h5><b>FirstName</b></h5></label>
+    <input type="text" ng-model="name1" id="name1" class="form-control" placeholder="Enter your FirstName" name="name1" value="" ng-minlength="3" ng-pattern="/^[a-zA-Z\s]*$/" title="Required" required>
+  </div>
+    <span style="color: red" ng-show="myform.name1.$touched && myform.name1.$dirty && myform.name1.$invalid">Enter Valid Name.</span>
+
+ 
+  <div class="form-group">
+    <label for="name2"><h5><b>LastName</b></h5></label> 
+    <input type="text" ng-model="name2" id="name2" class="form-control" placeholder="Enter your LastName" name="name2" value="" ng-minlength="3" ng-pattern="/^[a-zA-Z\s]*$/" title="Required" required>
+  </div>
+	<span style="color: red" ng-show="myform.name2.$touched && myform.name2.$dirty && myform.name2.$invalid">Enter Valid Name.</span>
+
+
+  <div class="form-group">
+  	<label for="phonenum"><h5><b>PhoneNumber</b></h5></label>
+	<input type="text" ng-model="phonenum" id="phonenum" class="form-control" placeholder="Enter your PhoneNumber" name="phonenum" value="" ng-pattern="/^\+?\d{10}$/" title="Required" required>
+      </div>      
+    <span style="color: red" ng-show="myform.phonenum.$touched && myform.phonenum.$dirty && myform.phonenum.$invalid">Enter valid Phone Number</span>
+
+  <div class="form-group">
+    <label for="email"><h5><b>EmailId</b></h5></label>
+     <div class="input-group">
+      <div class="input-group-addon">
+      <i class="fa fa-envelope-o"></i> 
+     </div>
+    <input type="email" ng-model="email" id="email" class="form-control" placeholder="Enter your Email" name="email" value="" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" title="Required" required>
+    </div>
+  </div>
+  <span style="color: red" ng-show="myform.email.$touched && myform.email.$dirty && myform.email.$invalid">Enter Valid Email Id.</span>
+
+  <div class="form-group" >
+   <label for="states"><h5><b>Select a State</b></h5></label>
+    <select type="text" ng-model="states" id="states" class="form-control" placeholder="Select any State" name="states" value="" title="Select a State" required>
+    	<option value="Andhra Pradesh">Andhra Pradesh</option>
+    	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    	<option value="Assam">Assam</option>
+    	<option value="Bihar">Bihar</option>
+    	<option value="Chattisgarh">Chattisgarh</option>
+    	<option value="Goa">Goa</option>
+    	<option value="Gujarat">Gujarat</option>
+    	<option value="Haryana">Haryana</option>
+    	<option value="Himachal Pradesh">Himachal Pradesh</option>
+    	<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+    	<option value="Jharkhand">Jharkhand</option>
+    	<option value="Karnataka">Karnataka</option>
+    	<option value="Kerala">Kerala</option>
+    	<option value="Madhya Pradesh">Madhya Pradesh</option>
+    	<option value="Maharashtra">Maharashtra</option>
+    	<option value="Manipur">Manipur</option>
+    	<option value="Meghalaya">Meghalaya</option>
+    	<option value="Mizoram">Mizoram</option>
+    	<option value="Nagaland">Nagaland</option>
+    	<option value="Orissa">Orissa</option>
+    	<option value="Punjab">Punjab</option>
+    	<option value="Rajasthan">Rajasthan</option>
+    	<option value="Sikkim">Sikkim</option>
+    	<option value="Tamil Nadu">Tamil Nadu</option>
+    	<option value="Telangana">Telangana</option>
+    	<option value="Tripura">Tripura</option>
+    	<option value="Uttaranchal">Uttaranchal</option>
+    	<option value="Uttarakhand">Uttarakhand</option>
+    	<option value="West Bengal">West Bengal</option>
+
+    </select>
+   </div>
+   <span style="color: red" ng-show="myform.states.$touched && myform.states.$dirty && myform.states.$invalid">Please Select any State</span>
+
+
+  <div class="form-group">
+	<label for="password"><h5><b>Password</b></h5></label>
+	<input type="password" ng-model="password" id="password" class="form-control" placeholder="Enter password with atleast 1 letter and a numeral" name="password" value="" ng-pattern="/^(?=.*[0-9])(?=.*[a-zA-Z]).{6,}$/" title="Required" required><br><br>
+	<input type="checkbox" onclick="myFunction()"><i><b>Show Password</b></i>
+  </div>
+  <span style="color: red" ng-show="myform.password.$touched && myform.password.$dirty && myform.password.$invalid">Enter password as mentioned below</span>
+
+
+  <div class="form-group">
+	<label for="passwordConfirm"><h5><b>Confirm Password</b></h5></label>
+	<input type="password" ng-model="passwordConfirm" id="passwordConfirm" class="form-control" placeholder="Enter the Same Password" name="passwordConfirm" value="" ng-pattern="/^((?=.*[0-9])(?=.*[a-zA-Z])).{6,12}$/" title="Passwords must match" compare-to="password" compare-to="password" required><br><br>
+	<input type="checkbox" onclick="myFunction1()"><i><b>Show Password</b></i>
+	<p class="help-block"><h6> Passwords must be between 6 and 12 characters long, containing at least one letter and one number.Please note,passwords are <b>case sensitive</b>.</h6></p>
+  </div>
+  <span style="color: red" ng-show="myform.passwordConfirm.$touched && myform.passwordConfirm.$dirty && myform.passwordConfirm.$invalid">Passwords Do Not Match</span>
+
+  <div class="row">
+	<div class="col-sm-12" style="text-align: right;">
+      <button  ng-disabled="myform.$invalid" type="button" class="btn btn-success" style="text-align: center background-color;">Submit</button>
+	</div>
+  </div>
+	
+</form>
+      <br><br><br>
+
+
+</div>
+
+</div>
